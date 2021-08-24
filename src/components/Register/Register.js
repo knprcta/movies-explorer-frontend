@@ -1,10 +1,19 @@
 import React from 'react';
-import './Register.css';
+import Auth from '../Auth/Auth';
 
 function Register() {
   return (
-    <p>REGISTER</p>
-  )
+    <section className="register">
+      <Auth
+        isOnSignUp={true}
+        greeting={'Добро пожаловать!'}
+        button={'Зарегистрироваться'}
+        link={'Войти'}
+        linkText={'Уже зарегистрированы?'}
+        linkPath={'/signin'}
+      />
+    </section>
+  );
 }
 
 export default Register;

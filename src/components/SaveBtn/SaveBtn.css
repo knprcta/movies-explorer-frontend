@@ -1,0 +1,27 @@
+.save-btn {
+  border: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../images/save-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f9f9f9;
+  border-radius: 36px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.save-btn_active {
+  background-image: url(../../images/save-button_active.svg);
+  background-color: black;
+}
+
+.save-btn:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
+}
+
+.save-btn_active:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}

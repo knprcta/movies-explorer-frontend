@@ -1,0 +1,116 @@
+.about-project {
+  display: flex;
+  flex-direction: column;
+  padding: 110px 0;
+  align-items: center;
+}
+
+.about-project__table {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 70px 0 0;
+  gap: 40px;
+}
+
+.about-project__heading {
+  margin: 0;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.21;
+}
+
+.about-project__text {
+  margin: 0;
+  padding-top: 26px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.about-project__line {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  width: 100%;
+  padding-top: 110px;
+  row-gap: 14px;
+}
+
+.about-project__week {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+}
+
+.about-project__week:nth-of-type(1) {
+  background-color: black;
+  color: white;
+}
+
+.about-project__week:nth-of-type(2) {
+  background-color: #f2f2f2;
+}
+
+.about-project__description {
+  text-align: center;
+  margin: 0;
+  color: #a0a0a0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+}
+
+@media screen and (max-width: 800px) {
+  .about-project {
+    padding: 90px 0;
+  }
+  .about-project__text {
+    font-size: 12px;
+    line-height: 1.5;
+    padding-top: 22px;
+  }
+  .about-project__line {
+    padding-top: 93px;
+    grid-template-columns: 2fr 5fr;
+  }
+  .about-project__table {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .about-project {
+    padding: 70px 0;
+  }
+  .about-project__table {
+    flex-direction: column;
+    gap: 54px;
+    padding-top: 60px;
+  }
+  .about-project__heading {
+    font-size: 18px;
+  }
+  .about-project__week {
+    font-size: 11px;
+  }
+  .about-project__description {
+    font-weight: 400;
+    font-size: 11px;
+  }
+  .about-project__line {
+    row-gap: 10px;
+    padding-top: 60px;
+    grid-template-columns: 1fr 2fr;
+  }
+  .about-project__text {
+    padding-top: 16px;
+    font-size: 11px;
+  }
+}

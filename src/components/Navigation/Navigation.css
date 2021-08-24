@@ -1,0 +1,51 @@
+.navigation {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.navigation__link {
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  color: black;
+}
+
+.navigation__link:hover {
+  opacity: 0.6;
+}
+
+.navigation__link_noauth {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.navigation__link_auth {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.navigation__link_active {
+  font-weight: 500;
+}
+
+.navigation__link_signin {
+  color: white;
+  padding: 8px 20px;
+  background-color: #000;
+  border-radius: 3px;
+  margin-left: 14px;
+}
+
+@media screen and (max-width: 505px) {
+  .navigation {
+    gap: 0;
+  }
+  .navigation__link_noauth {
+    font-size: 10px;
+  }
+  .navigation__link_signin {
+    padding: 5px 12px;
+  }
+}
