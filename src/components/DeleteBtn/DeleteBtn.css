@@ -1,0 +1,18 @@
+.delete-btn {
+  border: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../images/delete-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f9f9f9;
+  border-radius: 36px;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
+}

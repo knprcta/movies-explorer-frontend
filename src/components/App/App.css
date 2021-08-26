@@ -1,0 +1,14 @@
+.app {
+  font-family: 'Inter', 'Arial', sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+
+.app__content {
+  margin: auto;
+  min-width: 320px;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
