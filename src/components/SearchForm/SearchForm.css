@@ -26,6 +26,10 @@
   outline: none;
 }
 
+.search__input:focus {
+  box-shadow: 0px 0px 1px 1px #2be080;
+}
+
 .search__checkbox-wrapper {
   display: flex;
   gap: 12px;
