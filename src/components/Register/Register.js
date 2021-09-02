@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from '../Auth/Auth';
 
-function Register() {
+function Register({ onSubmit }) {
   return (
     <section className="register">
       <Auth
@@ -11,6 +11,7 @@ function Register() {
         link={'Войти'}
         linkText={'Уже зарегистрированы?'}
         linkPath={'/signin'}
+        onSubmit={onSubmit}
       />
     </section>
   );

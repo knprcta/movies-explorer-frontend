@@ -1,0 +1,9 @@
+export const MAINAPI_URL = 'https://api.knpr.diploma.nomoredomains.club';
+export const MOVIESAPI_URL = 'https://api.nomoreparties.co/beatfilm-movies';
+export const SHORT_DURATION = 40;
+export const DESKTOP_COUNT = 12;
+export const TABLET_COUNT = 8;
+export const MOBILE_COUNT = 5;
+export const DESKTOP_ADD_COUNT = 3;
+export const TABLET_ADD_COUNT = 2;
+export const MOBILE_ADD_COUNT = 1;
