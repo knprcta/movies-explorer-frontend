@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, useLocation, useHistory } from 'react-router-dom';
+import { Route, Switch, useLocation, useHistory, Link } from 'react-router-dom';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Header from '../Header/Header';
@@ -14,6 +14,7 @@ import Error from '../Error/Error';
 import Popup from '../Popup/Popup';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
+import fail from '../../images/fail.svg';
 import './App.css';
 import {
   SHORT_DURATION,
@@ -60,6 +61,11 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setPopupStatus(false);
+        setPopupMsg(
+          'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и перезагрузите страницу'
+        );
+        setIsPopupOpen(true);
       });
   }
 
@@ -76,17 +82,21 @@ function App() {
         .then((res) => {
           const moviesArr = res.map((item) => {
             return {
-              country: item.country,
-              director: item.director,
-              duration: item.duration,
-              year: item.year,
-              description: item.description,
-              image: `https://api.nomoreparties.co${item.image.url}`,
-              trailer: item.trailerLink,
+              country: item.country || 'Страна',
+              director: item.director || 'Режиссёр',
+              duration: item.duration || 0,
+              year: item.year || 'Год',
+              description: item.description || 'Описание',
+              image: `https://api.nomoreparties.co${item.image.url}` || fail,
+              trailer: item.trailerLink
+                ? item.trailerLink.includes('https')
+                  ? item.trailerLink
+                  : 'http://example.com'
+                : 'http://example.com',
               thumbnail: `https://api.nomoreparties.co${item.image.formats.thumbnail.url}`,
-              movieId: item.id,
-              nameRU: item.nameRU,
-              nameEN: item.nameEN,
+              movieId: item.id || Math.floor(Math.random() * 10000),
+              nameRU: item.nameRU || 'Название фильма',
+              nameEN: item.nameEN || 'Name',
             };
           });
           localStorage.setItem('movies', JSON.stringify(moviesArr));
@@ -94,6 +104,11 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
+          setPopupStatus(false);
+          setPopupMsg(
+            'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и перезагрузите страницу'
+          );
+          setIsPopupOpen(true);
         });
     }
   }
@@ -313,11 +328,6 @@ function App() {
           console.log(err);
           setLoggedIn(false);
           history.push('/');
-          setPopupStatus(false);
-          setPopupMsg(
-            'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
-          );
-          setIsPopupOpen(true);
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
