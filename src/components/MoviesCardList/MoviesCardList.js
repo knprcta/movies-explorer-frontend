@@ -1,27 +1,30 @@
 import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
-import { useLocation } from 'react-router-dom';
 
-function MoviesCardList({ movies }) {
-  const location = useLocation();
-  const inSavedLocation = location.pathname === '/saved-movies';
-
+function MoviesCardList({ movies, isSaved, onBtnClick, inSavedLocation }) {
   return (
-    <div className="movies-card-list__wrapper">
-      <ul className="movies-card-list">
-        {movies.map((item) => (
-          <li className="movies-card-list__item" key={item.id}>
-            <MoviesCard
-              key={item.id}
-              movie={item}
-              inSavedLocation={inSavedLocation}
-            />
-          </li>
-        ))}
-      </ul>
-      <button className="movies-card-list__more-btn">Ещё</button>
-    </div>
+    <>
+      {!movies.length ? (
+        <p className="movies-card-list__not-found">Ничего не найдено</p>
+      ) : (
+        <ul className="movies-card-list">
+          {movies.map((item) => (
+            <li
+              className="movies-card-list__item"
+              key={item.id || item.movieId}
+            >
+              <MoviesCard
+                movie={item}
+                inSavedLocation={inSavedLocation}
+                onBtnClick={onBtnClick}
+                isSaved={isSaved}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 

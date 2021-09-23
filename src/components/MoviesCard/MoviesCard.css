@@ -16,7 +16,7 @@
   flex-direction: column;
   gap: 9px;
   overflow: hidden;
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
 }
 
 .movies-card__title {
@@ -38,9 +38,17 @@
 }
 
 .movies-card__image {
-  background-size: cover;
+  padding-top: 56.25%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #f9f9f9;
-  padding-top: 56.25%;
+  background-size: cover;
+}
+
+.movies-card__trailer {
+  transition: opacity 0.3s ease;
+}
+
+.movies-card__trailer:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }

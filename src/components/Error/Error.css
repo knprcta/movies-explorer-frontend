@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 505px) {
   .error__position {
-    padding-bottom: 30px;
+    padding-bottom: 150px;
     height: 58%;
   }
   .error__main {

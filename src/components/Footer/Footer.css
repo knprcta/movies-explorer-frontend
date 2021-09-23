@@ -79,7 +79,6 @@
   }
   .footer__copyright {
     flex-direction: column-reverse;
-    gap: 30px;
   }
   .footer__list {
     flex-direction: column;
@@ -94,5 +93,6 @@
   .footer__date {
     font-size: 12px;
     color: #a0a0a0;
+    padding-top: 30px;
   }
 }
